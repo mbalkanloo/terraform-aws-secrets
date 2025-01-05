@@ -6,7 +6,7 @@ Terraform module which creates rotatable, sensitive secrets on AWS.
 ```hcl
 // always use private, remote backend for state
 terraform {
-  backend "s3" {}
+	backend "s3" {}
 }
 
 module "terraform-aws-secrets" {

@@ -6,7 +6,7 @@ terraform {
 }
 
 module "terraform-aws-secrets" {
-	source = "github.com/mbalkanloo/terraform-aws-secrets"
-	secrets = var.secrets
-	password_length = 32
+  source          = "github.com/mbalkanloo/terraform-aws-secrets"
+  secrets         = var.secrets
+  password_length = 32
 }

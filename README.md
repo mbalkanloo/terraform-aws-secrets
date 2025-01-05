@@ -18,7 +18,10 @@ module "terraform-aws-secrets" {
 
 ## Example Command
 ```bash
-AWS_REGION=us-east-1 terragrunt apply -var-file tfvars/secrets.tfvars
+# NOTE to be executed from the example directory
+# NOTE the terraform s3 backend "region" attribute or the AWS_REGION or AWS_DEFAULT_REGION environment variables must be set
+
+terragrunt apply -var-file tfvars/secrets.tfvars
 ```
 
 ## Secret Format
@@ -61,4 +64,4 @@ aws secretsmanager list-secrets --query 'SecretList[*].[Name, ARN]' --output tex
 
 ## TODO
   * For additional security and ease of use/deployment, retrieve the secret input from S3.
-  * Implement a scheduled password rotation methods.
+  * Implement a scheduled password rotation strategy.

@@ -48,7 +48,7 @@ secrets = [
   * Always use private, remote backend for terraform state to ensure that sensitive data is never stored locally.
   * If a randomly generated password is desired for the secret, simply ensure that the password attribute is present in the secret specification.
   * For security reasons, the input password values are ignored. Only randomly generated passwords created at runtime are supported.
-  * The optional rotation attribute controls password regeneration. Simply increment to update a password. 
+  * The optional rotation attribute controls password regeneration. Simply increment to update a password prior to applying the config.
   * To protect from exposing sensitive information, the var file need not be stored in a repo. Simply pass the location of the file via command line flag.
 
 ## Testing

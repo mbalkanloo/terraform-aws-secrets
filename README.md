@@ -1,6 +1,6 @@
 # AWS Secrets Terraform module
 
-Terraform module which creates rotatable, sensitive secrets in AWS SecretsManager.
+Terraform module which creates secrets in AWS SecretsManager with sensitive, rotatable, random passwords.
 
 ## Usage
 ```hcl
@@ -16,12 +16,12 @@ module "terraform-aws-secrets" {
 }
 ```
 
-## Command
+## Example Command
 ```bash
-USAGE AWS_REGION=us-east-1 terragrunt apply -var-file tfvars/secrets.tfvars
+AWS_REGION=us-east-1 terragrunt apply -var-file tfvars/secrets.tfvars
 ```
 
-## Format
+## Secret Format
 ```hcl
 secrets = [
 	{
@@ -47,10 +47,6 @@ secrets = [
   * The rotation attribute controls password regeneration. Simply increment to update the password. 
   * The var file can be stored locally to avoid exposing sensitive secret information.
 
-## TODO
-  * For additional security and ease of use/deployment, retrieve the secret input from S3.
-  * Implement a scheduled password rotation methods.
-
 ## Testing
 ### List secrets, one name per line.
 ```bash
@@ -62,3 +58,7 @@ aws secretsmanager list-secrets --query 'SecretList[*].[Name]' --output text
 aws secretsmanager list-secrets --query 'SecretList[*].[Name, ARN]' --output text \
         |xargs -L1 -P1 bash -c 'echo $0 && aws secretsmanager get-secret-value --secret-id $1 --query "SecretString"'
 ```
+
+## TODO
+  * For additional security and ease of use/deployment, retrieve the secret input from S3.
+  * Implement a scheduled password rotation methods.

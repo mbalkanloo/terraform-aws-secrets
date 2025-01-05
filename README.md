@@ -52,12 +52,12 @@ secrets = [
   * Implement a scheduled password rotation methods.
 
 ## Testing
-### list secrets, one name per line
+### List secrets, one name per line.
 ```bash
 aws secretsmanager list-secrets --query 'SecretList[*].[Name]' --output text
 ```
 
-### list secrets and values line by line
+### List secrets and values line by line.
 ```bash
 aws secretsmanager list-secrets --query 'SecretList[*].[Name, ARN]' --output text \
         |xargs -L1 -P1 bash -c 'echo $0 && aws secretsmanager get-secret-value --secret-id $1 --query "SecretString"'

@@ -45,10 +45,11 @@ secrets = [
 ```
 
 ## Security
+  * Always use private, remote backend for terraform state to ensure that sensitive data is never stored locally.
   * If a randomly generated password is desired for the secret, simply ensure that the password attribute is present in the secret specification.
-  * For security reasons, the var file password attribute is ignored. Only randomly generated passwords created at runtime are supported.
+  * For security reasons, the input password values are ignored. Only randomly generated passwords created at runtime are supported.
   * The rotation attribute controls password regeneration. Simply increment to update the password. 
-  * The var file can be stored locally to avoid exposing sensitive secret information.
+  * The var file can be stored locally or in secure cloud storage to protect from exposing sensitive secret information.
 
 ## Testing
 ### List secrets, one name per line.
@@ -65,3 +66,4 @@ aws secretsmanager list-secrets --query 'SecretList[*].[Name, ARN]' --output tex
 ## TODO
   * For additional security and ease of use/deployment, retrieve the secret input from S3.
   * Implement a scheduled password rotation strategy.
+  * Write and configure a Lambda function that creates and rotates secrets, thereby removing passwords from the state file.

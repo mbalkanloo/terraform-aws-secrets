@@ -12,12 +12,5 @@ secrets = [
     secret = {
       key = "bar"
     }
-  },
-  {
-    name = "testing/secret3"
-    secret = {
-      key      = "goober"
-      password = null
-    }
   }
 ]

@@ -50,6 +50,7 @@ secrets = [
   * For security reasons, the input password values are ignored. Only randomly generated passwords created at runtime are supported.
   * The optional rotation attribute controls password regeneration. Simply increment to update a password prior to applying the config.
   * To protect from exposing sensitive information, the var file need not be stored in a repo. Simply pass the location of the file via command line flag.
+  * The terraform random_password resource is treated as sensitive, by default.
 
 ## Testing
 ### List secrets, one name per line.

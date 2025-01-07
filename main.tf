@@ -1,5 +1,6 @@
 // WARN random passwords appear in the state file
 // NOTE using remote state ensures sensitive values are not stored locally
+// NOTE per the random_password documentation, results are sensitive by default
 
 resource "random_password" "passwords" {
   // to simplify instantiaion of the secret, create a password for each

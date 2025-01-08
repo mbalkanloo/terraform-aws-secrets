@@ -1,4 +1,4 @@
-# <marquee>THIS REPO IS PART OF AN INTERVIEW ASSIGNMENT</marquee><br/><br/>AWS Secrets Terraform Module
+# THIS REPO IS PART OF AN INTERVIEW ASSIGNMENT<br/><br/>AWS Secrets Terraform Module
 
 Terraform module which creates secrets in AWS SecretsManager with sensitive, rotatable, random passwords.
 

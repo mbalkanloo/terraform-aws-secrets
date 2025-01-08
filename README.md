@@ -1,4 +1,5 @@
-# AWS Secrets Terraform module [PART OF AN INTERVIEW ASSIGNMENT]
+# AWS Secrets Terraform module
+# PART OF AN INTERVIEW ASSIGNMENT
 
 Terraform module which creates secrets in AWS SecretsManager with sensitive, rotatable, random passwords.
 
